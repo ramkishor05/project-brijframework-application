@@ -33,9 +33,9 @@ public class ApplicationController {
 		return applicationMapper.mapToDTO(applicationRepository.findAll());
 	}
 	
-	@GetMapping("/{applicationDTO}")
-	public EOApplicationDTO getApplication(@PathVariable Long applicationDTO) {
-		return applicationMapper.mapToDTO(applicationRepository.findById(Long.valueOf(applicationDTO)).orElseGet(null));
+	@GetMapping("/{applicationId}")
+	public EOApplicationDTO getApplication(@PathVariable Long applicationId) {
+		return applicationMapper.mapToDTO(applicationRepository.findById(Long.valueOf(applicationId)).orElseGet(null));
 	}
 	
 	@PostMapping
@@ -70,15 +70,10 @@ public class ApplicationController {
 		return applicationMapper.mapToDTO(list);
 	}
 	
-	@DeleteMapping
-	public boolean deleteApplication(@RequestBody EOApplicationDTO applicationDTO) {
-		applicationRepository.delete(applicationMapper.mapToDAO(applicationDTO));
-		return true;
-	}
 	
-	@DeleteMapping("/{applicationDTO}")
-	public boolean deleteApplication(@PathVariable Long applicationDTO) {
-		applicationRepository.deleteById(Long.valueOf(applicationDTO));
+	@DeleteMapping("/{applicationId}")
+	public boolean deleteApplication(@PathVariable Long applicationId) {
+		applicationRepository.deleteById(Long.valueOf(applicationId));
 		return true;
 	}
 }
