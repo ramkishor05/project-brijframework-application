@@ -17,6 +17,7 @@ import com.brijframework.application.beans.EOApplicationDTO;
 import com.brijframework.application.entities.EOApplication;
 import com.brijframework.application.mapper.ApplicationMapper;
 import com.brijframework.application.repository.ApplicationRepository;
+import com.brijframework.application.service.ApplicationService;
 
 @RestController()
 @RequestMapping("application/")
@@ -27,6 +28,9 @@ public class ApplicationController {
 	
 	@Autowired
 	private ApplicationMapper applicationMapper;
+	
+	@Autowired
+	private ApplicationService applicationService;
 	
 	@GetMapping
 	public List<EOApplicationDTO> listApplication() {
@@ -40,24 +44,21 @@ public class ApplicationController {
 	
 	@PostMapping
 	public EOApplicationDTO addApplication(@RequestBody EOApplicationDTO applicationDTO) {
-		EOApplication eoApplication = applicationRepository.save(applicationMapper.mapToDAO(applicationDTO));
-		return applicationMapper.mapToDTO(eoApplication);
+		return applicationService.saveApplication(applicationDTO);
 	}
 	
 	@PostMapping("/list")
 	public List<EOApplicationDTO> addApplicationList(@RequestBody List<EOApplicationDTO> applicationDTOs) {
-		List<EOApplication> list=new ArrayList<EOApplication>();
+		List<EOApplicationDTO> list=new ArrayList<EOApplicationDTO>();
 		for(EOApplicationDTO applicationDTO:applicationDTOs) {
-		  EOApplication eoApplication = applicationRepository.save(applicationMapper.mapToDAO(applicationDTO));
-		  list.add(eoApplication);
+		   list.add(applicationService.saveApplication(applicationDTO));
 		}
-		return applicationMapper.mapToDTO(list);
+		return list;
 	}
 	
 	@PutMapping
 	public EOApplicationDTO updateApplication(@RequestBody EOApplicationDTO applicationDTO) {
-		EOApplication eoApplication = applicationRepository.save(applicationMapper.mapToDAO(applicationDTO));
-		return applicationMapper.mapToDTO(eoApplication);
+		return applicationService.saveApplication(applicationDTO);
 	}
 	
 	@PutMapping("/list")
@@ -69,7 +70,6 @@ public class ApplicationController {
 		}
 		return applicationMapper.mapToDTO(list);
 	}
-	
 	
 	@DeleteMapping("/{applicationId}")
 	public boolean deleteApplication(@PathVariable Long applicationId) {

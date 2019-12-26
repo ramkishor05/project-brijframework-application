@@ -1,18 +1,19 @@
 package com.brijframework.application.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="APP_FEATURE")
-public class EOAppFeature implements Serializable{
+@Table(name = "APP_FEATURE")
+public class EOAppFeature implements Serializable {
 
 	/**
 	 * 
@@ -20,20 +21,32 @@ public class EOAppFeature implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID")
+	@Column(name = "ID")
 	private long id;
-	
-	@Column(name="DESCRIPTION")
+
+	@Column(name = "DESCRIPTION")
 	private String description;
-	
-	@Column(name="DISPLAY_ORDER")
+
+	@Column(name = "DISPLAY_ORDER")
 	private double displayOrder;
-	
-	@Column(name="VIEW_DETAIL")
+
+	@Column(name = "VIEW_DETAIL")
 	private String viewDetail;
-	
-	@OneToMany(mappedBy="appFeature")
-	private List<EOAppEdition> appEditions;
+
+	@Column(name = "STATUS")
+	private boolean status;
+
+	@ManyToOne
+	@JoinColumn(name = "APP_EDITION")
+	private EOAppEdition appEdition;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getDescription() {
 		return description;
@@ -59,13 +72,20 @@ public class EOAppFeature implements Serializable{
 		this.viewDetail = viewDetail;
 	}
 
-	public List<EOAppEdition> getAppEditions() {
-		return appEditions;
+	public boolean isStatus() {
+		return status;
 	}
 
-	public void setAppEditions(List<EOAppEdition> appEditions) {
-		this.appEditions = appEditions;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
-	
-	
+
+	public EOAppEdition getAppEdition() {
+		return appEdition;
+	}
+
+	public void setAppEdition(EOAppEdition appEdition) {
+		this.appEdition = appEdition;
+	}
+
 }

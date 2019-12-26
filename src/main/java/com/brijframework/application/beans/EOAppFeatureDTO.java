@@ -6,6 +6,7 @@ public class EOAppFeatureDTO {
 	private String description;
 	private double displayOrder;
 	private String viewDetail;
+	private boolean status;
 
 	public long getId() {
 		return id;
@@ -37,6 +38,14 @@ public class EOAppFeatureDTO {
 
 	public void setViewDetail(String viewDetail) {
 		this.viewDetail = viewDetail;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }

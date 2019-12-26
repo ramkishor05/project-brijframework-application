@@ -1,5 +1,7 @@
 package com.brijframework.application.beans;
 
+import java.util.List;
+
 public class EOAppEditionDTO {
 
 	private long id;
@@ -15,6 +17,10 @@ public class EOAppEditionDTO {
 	public boolean trail;
 
 	public double version;
+
+	private boolean status;
+
+	private List<EOAppFeatureDTO> appFeatureList;
 
 	public long getId() {
 		return id;
@@ -70,6 +76,22 @@ public class EOAppEditionDTO {
 
 	public void setVersion(double version) {
 		this.version = version;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public List<EOAppFeatureDTO> getAppFeatureList() {
+		return appFeatureList;
+	}
+
+	public void setAppFeatureList(List<EOAppFeatureDTO> appFeatureList) {
+		this.appFeatureList = appFeatureList;
 	}
 
 }

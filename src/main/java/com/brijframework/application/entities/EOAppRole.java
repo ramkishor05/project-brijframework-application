@@ -27,24 +27,29 @@ public class EOAppRole implements Serializable{
 	private long id;
 	
 	@Column(name = "APP_ROLE_ID", nullable = false)
-	private String appRoleID;
+	private String appRoleId;
     
     @Column(name = "APP_ROLE_NAME", nullable = false)
     private String appRoleName;
     
     @Column(name = "APP_MENU_ID", nullable = false)
-    private String appMenuID; // Default MenuId for all editions if not overwritten
+    private String appMenuId; // Default MenuId for all editions if not overwritten
+    
+    @Column(name = "STATUS")
+	private boolean status;
     
 	@ManyToOne
 	@JoinColumn(name = "APP_ID", nullable = false)
 	private EOApplication application;
 
-	public String getAppRoleID() {
-		return appRoleID;
+	
+
+	public String getAppRoleId() {
+		return appRoleId;
 	}
 
-	public void setAppRoleID(String appRoleID) {
-		this.appRoleID = appRoleID;
+	public void setAppRoleId(String appRoleId) {
+		this.appRoleId = appRoleId;
 	}
 
 	public String getAppRoleName() {
@@ -55,13 +60,23 @@ public class EOAppRole implements Serializable{
 		this.appRoleName = appRoleName;
 	}
 
-	public String getAppMenuID() {
-		return appMenuID;
+	public String getAppMenuId() {
+		return appMenuId;
 	}
 
-	public void setAppMenuID(String appMenuID) {
-		this.appMenuID = appMenuID;
+	public void setAppMenuId(String appMenuId) {
+		this.appMenuId = appMenuId;
 	}
+	
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 
 	public EOApplication getApplication() {
 		return application;

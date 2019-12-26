@@ -37,6 +37,14 @@ public class EOAppDetail implements Serializable {
 	@Column(name="EXTERNAL_PORT")
 	private String externalPort;
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public double getDisplayOrder() {
 		return displayOrder;
 	}

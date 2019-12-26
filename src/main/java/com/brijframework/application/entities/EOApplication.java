@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="APP_INFO")
+@Table(name = "APP_INFO")
 public class EOApplication implements Serializable {
 
 	/**
@@ -26,20 +26,23 @@ public class EOApplication implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID")
+	@Column(name = "ID")
 	private Long id;
-	
+
 	@Column(name = "APP_ID")
-	private String appID;
-	
+	private String appId;
+
 	@Column(name = "APP_NAME")
 	private String appName;
-	
+
 	@Column(name = "APP_LOGO")
 	private String appLogo;
-	
+
 	@Column(name = "APP_URL")
 	private String appURL;
+
+	@Column(name = "STATUS")
+	private boolean status;
 
 	@OneToOne
 	private EOAppDetail appDetail;
@@ -49,21 +52,21 @@ public class EOApplication implements Serializable {
 
 	@OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
 	private Set<EOAppRole> appRoleArray = new LinkedHashSet<>();
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
 
-	public String getAppID() {
-		return appID;
+	public String getAppId() {
+		return appId;
 	}
 
-	public void setAppID(String appID) {
-		this.appID = appID;
+	public void setAppId(String appID) {
+		this.appId = appID;
 	}
 
 	public String getAppName() {
@@ -88,6 +91,14 @@ public class EOApplication implements Serializable {
 
 	public void setAppURL(String appURL) {
 		this.appURL = appURL;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public EOAppDetail getAppDetail() {
@@ -116,7 +127,7 @@ public class EOApplication implements Serializable {
 
 	public EOAppRole appRoleForRole(String roleId) {
 		for (EOAppRole appRole : this.appRoleArray) {
-			if (appRole.getAppRoleID().equals(roleId)) {
+			if (appRole.getAppRoleId().equals(roleId)) {
 				return appRole;
 			}
 		}
@@ -124,6 +135,6 @@ public class EOApplication implements Serializable {
 	}
 
 	public boolean isInventory() {
-		return INVERTORY.equals(this.appID);
+		return INVERTORY.equals(this.appId);
 	}
 }
