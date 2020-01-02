@@ -1,0 +1,26 @@
+[
+
+	{
+		"id": "EOLKUnitGroupFluid",
+		"type": "com.brijframework.application.model.EOLKUnitGroup",
+		"name": "EOLKUnitGroup",
+		"properties": {
+			"typeID": "FLUID",
+			"shortDesc":"Fluid",
+			"longDesc":"Fluid",
+			"friendlyName":"Volume ( Fluid }"
+		}
+	}
+	,
+	{
+		"id": "EOLKUnitGroupSolid",
+		"type": "com.brijframework.application.model.EOLKUnitGroup",
+		"name": "EOLKUnitGroup",
+		"properties": {
+			"typeID": "SOLID",
+			"shortDesc":"Solid",
+			"longDesc":"Solid",
+			"friendlyName":"Weight ( Solid }"
+		}
+	}
+]

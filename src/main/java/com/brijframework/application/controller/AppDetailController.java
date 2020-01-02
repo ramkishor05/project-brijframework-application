@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.application.beans.EOAppDetailDTO;
-import com.brijframework.application.entities.EOAppDetail;
 import com.brijframework.application.mapper.AppDetailMapper;
+import com.brijframework.application.model.EOAppDetail;
 import com.brijframework.application.repository.AppDetailRepository;
 
 @RestController

@@ -1,0 +1,15 @@
+[
+	{
+		"id": "INVERTORY_APP_OWNER",
+		"type": "com.brijframework.application.model.EOAppRole",
+		"name": "appRole",
+		"properties": {
+			"appRoleId": "INVERTORY_APP_OWNER",
+			"appRoleName": "OWNER",
+			"appLogo": "assert/app/logo/logo-crm.png",
+			"application": {
+				"@ref": "INVERTORY_APP"
+			}
+		}
+	}
+]

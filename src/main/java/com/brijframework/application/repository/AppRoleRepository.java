@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.brijframework.application.entities.EOAppRole;
+import com.brijframework.application.model.EOAppRole;
 
 @Repository
 @Transactional

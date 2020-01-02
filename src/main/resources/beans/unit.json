@@ -1,0 +1,86 @@
+[
+	{
+		"id": "EOLKUnitTsp",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "TSP",
+			"shortDesc": "Tsp",
+			"longDesc": "Tsp",
+			"friendlyName": "Volume ( Tsp }",
+			"unitGroup@ref": "EOLKUnitGroupFluid"
+		}
+	},
+	{
+		"id": "EOLKUnitTbsp",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "TBSP",
+			"shortDesc": "Tbsp",
+			"longDesc": "Tbsp",
+			"friendlyName": "Volume ( Tbsp }",
+			"unitGroup@ref": "EOLKUnitGroupFluid"
+		}
+	},
+	{
+		"id": "EOLKUnitPint",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "PINT",
+			"shortDesc": "Pt",
+			"longDesc": "Pint",
+			"friendlyName": "Volume ( Pint }",
+			"unitGroup@ref": "EOLKUnitGroupFluid"
+		}
+	},
+	{
+		"id": "EOLKUnitQuart",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "QUART",
+			"shortDesc": "Qrt",
+			"longDesc": "Quart",
+			"friendlyName": "Volume ( Quart }",
+			"unitGroup@ref": "EOLKUnitGroupFluid"
+		}
+	},
+	{
+		"id": "EOLKUnitGallon",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "GALLON",
+			"shortDesc": "Gl",
+			"longDesc": "Gallon",
+			"friendlyName": "Volume ( Gallon }",
+			"unitGroup@ref": "EOLKUnitGroupFluid"
+		}
+	},
+	{
+		"id": "EOLKUnitKiloGram",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "KILOGRAM",
+			"shortDesc": "K G",
+			"longDesc": "Kilo Gram",
+			"friendlyName": " Weight ( Gallon }",
+			"unitGroup@ref": "EOLKUnitGroupSolid"
+		}
+	},
+	{
+		"id": "EOLKUnitGram",
+		"type": "com.brijframework.application.model.EOLKUnit",
+		"name": "EOLKUnit",
+		"properties": {
+			"typeID": "GRAM",
+			"shortDesc": "Gr",
+			"longDesc": "Gram",
+			"friendlyName": " Weight ( Gram }",
+			"unitGroup@ref": "EOLKUnitGroupSolid"
+		}
+	}
+]

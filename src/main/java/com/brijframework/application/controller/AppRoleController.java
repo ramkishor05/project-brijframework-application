@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.application.beans.EOAppRoleDTO;
-import com.brijframework.application.entities.EOAppRole;
 import com.brijframework.application.mapper.AppRoleMapper;
+import com.brijframework.application.model.EOAppRole;
 import com.brijframework.application.repository.AppRoleRepository;
 
 @RestController

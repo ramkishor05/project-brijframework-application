@@ -1,0 +1,13 @@
+[
+  {
+	 "id" :"INVERTORY_APP",
+	 "type":"com.brijframework.application.model.EOApplication",
+	 "name": "application",
+	 "properties":{
+	     "appId":"INVERTORY_APP",
+     	 "appName": "INVERTORY APP",
+      	 "appLogo": "assert/app/logo/logo-crm.png",
+     	 "appURL": "http://localhost:8084/invontory"
+	 }
+   }
+]

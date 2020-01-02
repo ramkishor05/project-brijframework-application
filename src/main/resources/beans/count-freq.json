@@ -1,0 +1,43 @@
+[
+	{
+		"id": "EOLKCountFreqDaily",
+		"type": "com.brijframework.application.model.EOLKCountFreq",
+		"name": "EOLKCountFreq",
+		"properties": {
+			"typeId": "DAILY",
+			"name": "Daily",
+			"description": "Count daily time duraction"
+		}
+	},
+	{
+		"id": "EOLKCountFreqWeekly",
+		"type": "com.brijframework.application.model.EOLKCountFreq",
+		"name": "EOLKCountFreq",
+		"properties": {
+			"typeId": "WEEKLY",
+			"name": "Weekly",
+			"description": "Count weekly time duraction"
+		}
+	}
+	,
+	{
+		"id": "EOLKCountFreqMonthly",
+		"type": "com.brijframework.application.model.EOLKCountFreq",
+		"name": "EOLKCountFreq",
+		"properties": {
+			"typeId": "MONTHLY",
+			"name": "Monthly",
+			"description": "Count Monthly time duraction"
+		}
+	},
+	{
+		"id": "EOLKCountFreqPeriod",
+		"type": "com.brijframework.application.model.EOLKCountFreq",
+		"name": "EOLKCountFreq",
+		"properties": {
+			"typeId": "PERIOD",
+			"name": "Period",
+			"description": "Count Period time duraction"
+		}
+	}
+]

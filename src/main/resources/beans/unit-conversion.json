@@ -1,0 +1,26 @@
+[
+	{
+		"id": "KG_TO_GR",
+		"type": "com.brijframework.application.model.EOLKUnitConversion",
+		"name": "EOLKUnitConversion",
+		"properties": {
+			"typeId": "KG_TO_GR",
+			"baseQnt":1,
+			"rptQnt":0.0001,
+			"baseUnit@ref":"EOLKUnitGram",
+		    "rptUnit@ref":"EOLKUnitKiloGram"
+		}
+	},
+	{
+		"id": "GR_TO_KG",
+		"type": "com.brijframework.application.model.EOLKUnitConversion",
+		"name": "appRole",
+		"properties": {
+			"typeId": "GR_TO_KG",
+			"baseQnt":1000,
+			"rptQnt":1,
+		    "baseUnit@ref":"EOLKUnitGram",
+		    "rptUnit@ref":"EOLKUnitKiloGram"
+		}
+	}
+]

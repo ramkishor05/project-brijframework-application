@@ -112,6 +112,13 @@
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.brijframework</groupId>
+			<artifactId>brijframework-bean</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
