@@ -16,16 +16,16 @@ application:
   profiles: dev
   resource:
     config:
-     location : classpath:/
+     location : classpath:data
      enable : true
   model:
    config: 
-     location : classpath:/models
+     location : classpath:\data\models
      packages : org.brijframework.dao
      enable : false
   bean:
    config: 
-     location : classpath:/beans
+     location : classpath:\data\beans
      packages : com.brijframework
      enable : true
 server:

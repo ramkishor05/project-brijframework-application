@@ -3,6 +3,9 @@ package com.brijframework.application.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -12,7 +15,11 @@ public class EOLKUnit implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String typeID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long id;
+	
+	private String typeId;
 	private String shortDesc;
 	private String longDesc;
 	private String friendlyName;
@@ -21,12 +28,12 @@ public class EOLKUnit implements Serializable {
 	@JoinColumn(name = "UNIT_GROUP_ID")
 	private EOLKUnitGroup unitGroup;
 
-	public String getTypeID() {
-		return typeID;
+	public String getTypeId() {
+		return typeId;
 	}
 
-	public void setTypeID(String typeID) {
-		this.typeID = typeID;
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
 	}
 
 	public String getShortDesc() {
@@ -61,4 +68,11 @@ public class EOLKUnit implements Serializable {
 		this.unitGroup = unitGroup;
 	}
 
+	@Override
+	public String toString() {
+		return "EOLKUnit [id=" + id + ", typeId=" + typeId + ", shortDesc=" + shortDesc + ", longDesc=" + longDesc
+				+ ", friendlyName=" + friendlyName + ", unitGroup=" + unitGroup + "]";
+	}
+
+	
 }

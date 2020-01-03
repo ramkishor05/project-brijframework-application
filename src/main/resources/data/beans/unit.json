@@ -4,7 +4,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "TSP",
+			"typeId": "TSP",
 			"shortDesc": "Tsp",
 			"longDesc": "Tsp",
 			"friendlyName": "Volume ( Tsp }",
@@ -16,7 +16,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "TBSP",
+			"typeId": "TBSP",
 			"shortDesc": "Tbsp",
 			"longDesc": "Tbsp",
 			"friendlyName": "Volume ( Tbsp }",
@@ -28,7 +28,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "PINT",
+			"typeId": "PINT",
 			"shortDesc": "Pt",
 			"longDesc": "Pint",
 			"friendlyName": "Volume ( Pint }",
@@ -40,7 +40,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "QUART",
+			"typeId": "QUART",
 			"shortDesc": "Qrt",
 			"longDesc": "Quart",
 			"friendlyName": "Volume ( Quart }",
@@ -52,7 +52,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "GALLON",
+			"typeId": "GALLON",
 			"shortDesc": "Gl",
 			"longDesc": "Gallon",
 			"friendlyName": "Volume ( Gallon }",
@@ -64,7 +64,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "KILOGRAM",
+			"typeId": "KILOGRAM",
 			"shortDesc": "K G",
 			"longDesc": "Kilo Gram",
 			"friendlyName": " Weight ( Gallon }",
@@ -76,7 +76,7 @@
 		"type": "com.brijframework.application.model.EOLKUnit",
 		"name": "EOLKUnit",
 		"properties": {
-			"typeID": "GRAM",
+			"typeId": "GRAM",
 			"shortDesc": "Gr",
 			"longDesc": "Gram",
 			"friendlyName": " Weight ( Gram }",
