@@ -1,5 +1,7 @@
 package com.brijframework.application.beans;
 
+import java.util.List;
+
 public class EOApplicationDTO {
 
 	private Long id;
@@ -16,7 +18,9 @@ public class EOApplicationDTO {
 
 	private EOAppDetailDTO appDetail;
 
-	private EOAppEditionDTO appEdition;
+	private List<EOAppRoleDTO> appRoleList;
+
+	private List<EOAppEditionDTO> appEditionList;
 
 	public Long getId() {
 		return id;
@@ -74,12 +78,20 @@ public class EOApplicationDTO {
 		this.appDetail = appDetail;
 	}
 
-	public EOAppEditionDTO getAppEdition() {
-		return appEdition;
+	public List<EOAppRoleDTO> getAppRoleList() {
+		return appRoleList;
 	}
 
-	public void setAppEdition(EOAppEditionDTO appEdition) {
-		this.appEdition = appEdition;
+	public void setAppRoleList(List<EOAppRoleDTO> appRoleList) {
+		this.appRoleList = appRoleList;
+	}
+
+	public List<EOAppEditionDTO> getAppEditionList() {
+		return appEditionList;
+	}
+
+	public void setAppEditionList(List<EOAppEditionDTO> appEditionList) {
+		this.appEditionList = appEditionList;
 	}
 
 }

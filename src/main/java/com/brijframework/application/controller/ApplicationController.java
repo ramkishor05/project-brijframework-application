@@ -1,6 +1,5 @@
 package com.brijframework.application.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,32 +13,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.application.beans.EOApplicationDTO;
-import com.brijframework.application.mapper.ApplicationMapper;
-import com.brijframework.application.model.EOApplication;
-import com.brijframework.application.repository.ApplicationRepository;
-import com.brijframework.application.service.ApplicationService;
+import com.brijframework.application.service.AppDetailService;
 
 @RestController()
-@RequestMapping("application/")
+@RequestMapping("application")
 public class ApplicationController {
 
 	@Autowired
-	private ApplicationRepository applicationRepository;
-	
-	@Autowired
-	private ApplicationMapper applicationMapper;
-	
-	@Autowired
-	private ApplicationService applicationService;
+	private AppDetailService applicationService;
 	
 	@GetMapping
-	public List<EOApplicationDTO> listApplication() {
-		return applicationMapper.mapToDTO(applicationRepository.findAll());
+	public List<EOApplicationDTO> getApplicationList() {
+		return applicationService.getApplicationList();
 	}
 	
 	@GetMapping("/{applicationId}")
 	public EOApplicationDTO getApplication(@PathVariable Long applicationId) {
-		return applicationMapper.mapToDTO(applicationRepository.findById(Long.valueOf(applicationId)).orElseGet(null));
+		return applicationService.getApplication(applicationId);
 	}
 	
 	@PostMapping
@@ -49,11 +39,7 @@ public class ApplicationController {
 	
 	@PostMapping("/list")
 	public List<EOApplicationDTO> addApplicationList(@RequestBody List<EOApplicationDTO> applicationDTOs) {
-		List<EOApplicationDTO> list=new ArrayList<EOApplicationDTO>();
-		for(EOApplicationDTO applicationDTO:applicationDTOs) {
-		   list.add(applicationService.saveApplication(applicationDTO));
-		}
-		return list;
+		return applicationService.saveApplicationList(applicationDTOs);
 	}
 	
 	@PutMapping
@@ -63,17 +49,11 @@ public class ApplicationController {
 	
 	@PutMapping("/list")
 	public List<EOApplicationDTO> updateApplicationList(@RequestBody List<EOApplicationDTO> applicationDTOs) {
-		List<EOApplication> list=new ArrayList<EOApplication>();
-		for(EOApplicationDTO applicationDTO:applicationDTOs) {
-		  EOApplication eoApplication = applicationRepository.save(applicationMapper.mapToDAO(applicationDTO));
-		  list.add(eoApplication);
-		}
-		return applicationMapper.mapToDTO(list);
+		return applicationService.saveApplicationList(applicationDTOs);
 	}
 	
 	@DeleteMapping("/{applicationId}")
 	public boolean deleteApplication(@PathVariable Long applicationId) {
-		applicationRepository.deleteById(Long.valueOf(applicationId));
-		return true;
+		return applicationService.deleteApplication(applicationId);
 	}
 }

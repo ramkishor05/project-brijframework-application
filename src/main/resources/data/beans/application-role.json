@@ -6,6 +6,7 @@
 		"properties": {
 			"appRoleId": "INVERTORY_APP_OWNER",
 			"appRoleName": "OWNER",
+			"appMenuId": "INVERTORY_APP_OWNER",
 			"application": {
 				"@ref": "INVERTORY_APP"
 			}

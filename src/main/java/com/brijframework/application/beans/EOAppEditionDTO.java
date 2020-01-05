@@ -6,19 +6,21 @@ public class EOAppEditionDTO {
 
 	private long id;
 
-	public double displayOrder;
+	private double displayOrder;
 
-	public String description;
+	private String description;
 
-	public double monthlyRate;
+	private double monthlyRate;
 
-	public int startPayDay;
+	private int startPayDay;
 
-	public boolean trail;
+	private boolean trail;
 
-	public double version;
+	private double version;
 
 	private boolean status;
+
+	private long applicationId;
 
 	private List<EOAppFeatureDTO> appFeatureList;
 
@@ -28,6 +30,14 @@ public class EOAppEditionDTO {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public long getApplicationId() {
+		return applicationId;
+	}
+
+	public void setApplicationId(long applicationId) {
+		this.applicationId = applicationId;
 	}
 
 	public double getDisplayOrder() {

@@ -1,0 +1,13 @@
+[
+	{
+		"id": "INVERTORY_APP_EDITION_FEATURE",
+		"type": "com.brijframework.application.model.EOAppFeature",
+		"name": "EOAppFeature",
+		"properties": {
+			"displayOrder": "1.3",
+			"description": "Customer can be store employee , sales man , and othor person dateils",
+			"viewDetail": "Customer can be store employee , sales man , and othor person dateils and view contact informartion",
+			"appEdition@ref": "INVERTORY_APP_EDITION"
+		}
+	}
+]

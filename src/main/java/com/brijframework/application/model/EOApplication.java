@@ -1,15 +1,14 @@
 package com.brijframework.application.model;
 
 import java.io.Serializable;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -45,28 +44,29 @@ public class EOApplication implements Serializable {
 	private boolean status;
 
 	@OneToOne
+	@JoinColumn(name="APPDETAIL_ID")
 	private EOAppDetail appDetail;
 
-	@OneToOne
-	private EOAppEdition appEdition;
+	@OneToMany(mappedBy = "application")
+	private List<EOAppRole> appRoleList;
 
-	@OneToMany(mappedBy = "application", fetch = FetchType.EAGER)
-	private Set<EOAppRole> appRoleArray = new LinkedHashSet<>();
+	@OneToMany(mappedBy = "application")
+	private List<EOAppEdition> appEditionList;
+	
+	public Long getId() {
+		return id;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 	public String getAppId() {
 		return appId;
 	}
 
-	public void setAppId(String appID) {
-		this.appId = appID;
+	public void setAppId(String appId) {
+		this.appId = appId;
 	}
 
 	public String getAppName() {
@@ -109,24 +109,24 @@ public class EOApplication implements Serializable {
 		this.appDetail = appDetail;
 	}
 
-	public EOAppEdition getAppEdition() {
-		return appEdition;
+	public List<EOAppRole> getAppRoleList() {
+		return appRoleList;
 	}
 
-	public void setAppEdition(EOAppEdition appEdition) {
-		this.appEdition = appEdition;
+	public void setAppRoleList(List<EOAppRole> appRoleList) {
+		this.appRoleList = appRoleList;
 	}
 
-	public Set<EOAppRole> getAppRoleArray() {
-		return appRoleArray;
+	public List<EOAppEdition> getAppEditionList() {
+		return appEditionList;
 	}
 
-	public void setAppRoleArray(Set<EOAppRole> appRoleArray) {
-		this.appRoleArray = appRoleArray;
+	public void setAppEditionList(List<EOAppEdition> appEditionList) {
+		this.appEditionList = appEditionList;
 	}
 
 	public EOAppRole appRoleForRole(String roleId) {
-		for (EOAppRole appRole : this.appRoleArray) {
+		for (EOAppRole appRole : this.appRoleList) {
 			if (appRole.getAppRoleId().equals(roleId)) {
 				return appRole;
 			}

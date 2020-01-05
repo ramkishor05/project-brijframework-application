@@ -1,6 +1,5 @@
 package com.brijframework.application.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,71 +13,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframework.application.beans.EOAppEditionDTO;
-import com.brijframework.application.mapper.AppEditionMapper;
-import com.brijframework.application.model.EOAppEdition;
-import com.brijframework.application.repository.AppEditionRepository;
+import com.brijframework.application.service.AppEditionService;
 
 @RestController
-@RequestMapping("application/edition/")
+@RequestMapping("application/edition")
 public class AppEditionController {
 
 	@Autowired
-	private AppEditionRepository appEditionRepository;
-	
-	@Autowired
-	private AppEditionMapper appEditionMapper;
+	AppEditionService appEditionService;
 	
 	@GetMapping
-	public List<EOAppEditionDTO> listAppEdition() {
-		return appEditionMapper.mapToDTO(appEditionRepository.findAll());
+	public List<EOAppEditionDTO> getAppEditionList() {
+		return appEditionService.getAppEditionList();
 	}
 	
 	@GetMapping("/{appEditionDTO}")
 	public EOAppEditionDTO getAppEdition(@PathVariable Long appEditionDTO) {
-		return appEditionMapper.mapToDTO(appEditionRepository.findById(Long.valueOf(appEditionDTO)).orElseGet(null));
+		return appEditionService.getAppEdition(appEditionDTO);
 	}
 	
 	@PostMapping
 	public EOAppEditionDTO addAppEdition(@RequestBody EOAppEditionDTO applicationDTO) {
-		EOAppEdition eoAppEdition = appEditionRepository.save(appEditionMapper.mapToDAO(applicationDTO));
-		return appEditionMapper.mapToDTO(eoAppEdition);
+		return appEditionService.saveAppEdition(applicationDTO);
 	}
 	
 	@PostMapping("/list")
 	public List<EOAppEditionDTO> addAppEditionList(@RequestBody List<EOAppEditionDTO> applicationDTOs) {
-		List<EOAppEdition> list=new ArrayList<EOAppEdition>();
-		for(EOAppEditionDTO applicationDTO:applicationDTOs) {
-		  EOAppEdition eoAppEdition = appEditionRepository.save(appEditionMapper.mapToDAO(applicationDTO));
-		  list.add(eoAppEdition);
-		}
-		return appEditionMapper.mapToDTO(list);
+		return appEditionService.saveAppEditionList(applicationDTOs);
 	}
 	
 	@PutMapping
 	public EOAppEditionDTO updateAppEdition(@RequestBody EOAppEditionDTO applicationDTO) {
-		EOAppEdition eoAppEdition = appEditionRepository.save(appEditionMapper.mapToDAO(applicationDTO));
-		return appEditionMapper.mapToDTO(eoAppEdition);
+		return appEditionService.saveAppEdition(applicationDTO);
 	}
 	
 	@PutMapping("/list")
 	public List<EOAppEditionDTO> updateAppEditionList(@RequestBody List<EOAppEditionDTO> applicationDTOs) {
-		List<EOAppEdition> list=new ArrayList<EOAppEdition>();
-		for(EOAppEditionDTO applicationDTO:applicationDTOs) {
-		  EOAppEdition eoAppEdition = appEditionRepository.save(appEditionMapper.mapToDAO(applicationDTO));
-		  list.add(eoAppEdition);
-		}
-		return appEditionMapper.mapToDTO(list);
+		return appEditionService.saveAppEditionList(applicationDTOs);
 	}
 	
 	@DeleteMapping
 	public boolean deleteAppEdition(@RequestBody EOAppEditionDTO applicationDTO) {
-		appEditionRepository.delete(appEditionMapper.mapToDAO(applicationDTO));
-		return true;
+		return appEditionService.deleteAppEdition(applicationDTO);
 	}
 	
 	@DeleteMapping("/{applicationDTO}")
 	public boolean deleteAppEdition(@PathVariable Long applicationDTO) {
-		appEditionRepository.deleteById(Long.valueOf(applicationDTO));
-		return true;
+		return appEditionService.deleteAppEdition(applicationDTO);
 	}
 }

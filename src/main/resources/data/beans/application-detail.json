@@ -1,0 +1,13 @@
+[
+  {
+	 "id" :"INVERTORY_APP_DETAIL",
+	 "type":"com.brijframework.application.model.EOAppDetail",
+	 "name": "EOAppDetail",
+	 "properties":{
+     	 "externalHost": "localhost",
+      	 "externalPort": "8080",
+     	 "internalHost": "localhost",
+     	 "internalPort": "8080"
+	 }
+   }
+]

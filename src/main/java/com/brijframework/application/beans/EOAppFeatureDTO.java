@@ -6,6 +6,7 @@ public class EOAppFeatureDTO {
 	private String description;
 	private double displayOrder;
 	private String viewDetail;
+	private long appEditionId;
 	private boolean status;
 
 	public long getId() {
@@ -47,5 +48,15 @@ public class EOAppFeatureDTO {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+
+	public long getAppEditionId() {
+		return appEditionId;
+	}
+
+	public void setAppEditionId(long appEditionId) {
+		this.appEditionId = appEditionId;
+	}
+	
+	
 
 }
