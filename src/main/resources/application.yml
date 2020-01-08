@@ -30,4 +30,10 @@ eureka:
     client:
       serviceUrl:
         defaultZone: http://localhost:1111/eureka/
-
+security:
+    oauth2:
+       resource:
+         token-info-uri: http://localhost:8080/oauth/check_token
+       client:        
+         client-id: client
+         client-secret: password
